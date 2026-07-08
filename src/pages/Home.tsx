@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthenticator } from "@aws-amplify/ui-react";
+import { useAuth } from "../auth/useAuth";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "../assets/vite.svg";
 import heroImg from "../assets/hero.png";
@@ -8,7 +8,7 @@ import "../App.css";
 
 function Home() {
   const [count, setCount] = useState(0);
-  const { user } = useAuthenticator((context) => [context.user]);
+  const { user } = useAuth();
 
   return (
     <div id="layout">

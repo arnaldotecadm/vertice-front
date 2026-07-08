@@ -1,9 +1,9 @@
-import { useAuthenticator } from '@aws-amplify/ui-react'
+import { useAuth } from '../auth/useAuth'
 import './Sidebar.css'
 
 // Placeholder left-hand panel. Menu items will be added here later.
 function Sidebar() {
-  const { signOut } = useAuthenticator((context) => [context.user])
+  const { signOut } = useAuth()
 
   return (
     <aside id="sidebar">

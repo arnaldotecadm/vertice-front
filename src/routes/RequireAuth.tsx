@@ -1,13 +1,13 @@
 import type { ReactElement } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuthenticator } from "@aws-amplify/ui-react";
+import { useAuth } from "../auth/useAuth";
 
 // Guards a route so it is only rendered when the user is authenticated.
 // Unauthenticated users are redirected to /login, with the originally
 // requested location stashed in navigation state so Login can send them
 // back afterwards.
 function RequireAuth({ children }: { children: ReactElement }) {
-  const { authStatus } = useAuthenticator((context) => [context.authStatus]);
+  const { authStatus } = useAuth();
   const location = useLocation();
 
   if (authStatus === "configuring") {
