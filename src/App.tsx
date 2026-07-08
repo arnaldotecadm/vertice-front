@@ -20,11 +20,11 @@ function App() {
         <Hero />
         <Services />
         <Portfolio />
-        <WhyChooseUs />
         <Technologies />
         <Process />
         <Industries />
         <Testimonials />
+        <WhyChooseUs />
         <CTA />
       </main>
       <Footer />

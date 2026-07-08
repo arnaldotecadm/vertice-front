@@ -18,8 +18,8 @@ function Footer() {
   const NAVIGATION_LINKS = [
     { label: t.nav.home, href: "#home" },
     { label: t.nav.services, href: "#services" },
-    { label: t.nav.about, href: "#about" },
     { label: t.nav.solutions, href: "#solutions" },
+    { label: t.nav.about, href: "#about" },
   ];
 
   return (
