@@ -18,7 +18,7 @@ function CTA() {
               {t.cta.subtitle}
             </p>
             <a
-              href="mailto:hello@verticesistemas.pt"
+              href="mailto:arnaldotecadm@hotmail.com"
               className={cn(
                 buttonVariants({ variant: "default", size: "lg" }),
                 "group mt-8 h-12 rounded-xl px-6 text-sm font-semibold shadow-sm"

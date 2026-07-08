@@ -12,10 +12,6 @@ export interface Translations {
     switchToLightMode: string;
     switchToDarkMode: string;
   };
-  trustedEngineering: {
-    title: string;
-    items: { title: string; description: string }[];
-  };
   hero: {
     titleStart: string;
     titleHighlight: string;
@@ -35,9 +31,6 @@ export interface Translations {
     title: string;
     items: { title: string; description: string }[];
   };
-  technologies: {
-    title: string;
-  };
   process: {
     title: string;
     subtitle: string;
@@ -54,6 +47,7 @@ export interface Translations {
     aboutTitle: string;
     contactTitle: string;
     email: string;
+    phone: string;
     linkedin: string;
     github: string;
     copyright: string;
@@ -71,31 +65,6 @@ export const en: Translations = {
     closeMenu: "Close menu",
     switchToLightMode: "Switch to light mode",
     switchToDarkMode: "Switch to dark mode",
-  },
-  trustedEngineering: {
-    title: "Trusted Engineering",
-    items: [
-      {
-        title: "Senior Software Engineers",
-        description:
-          "Battle-tested professionals with deep expertise in full-stack architecture.",
-      },
-      {
-        title: "Cloud Native Architecture",
-        description:
-          "Built for scale using modern cloud-native patterns and resilient infrastructure.",
-      },
-      {
-        title: "Modern Technologies",
-        description:
-          "Practical technology choices with proven tools like AWS, Kotlin, and React.",
-      },
-      {
-        title: "Long-Term Support",
-        description:
-          "Continuous evolution and maintenance for software your business depends on.",
-      },
-    ],
   },
   hero: {
     titleStart: "Building Reliable Software for Businesses That Want to",
@@ -179,9 +148,6 @@ export const en: Translations = {
       },
     ],
   },
-  technologies: {
-    title: "Our Technology Stack",
-  },
   process: {
     title: "How We Work",
     subtitle: "A structured approach to turning ideas into high-performance software.",
@@ -220,7 +186,8 @@ export const en: Translations = {
     servicesTitle: "Services",
     aboutTitle: "About",
     contactTitle: "Contact",
-    email: "hello@verticesistemas.pt",
+    email: "arnaldotecadm@hotmail.com",
+    phone: "+351 91 039 90 47",
     linkedin: "LinkedIn",
     github: "GitHub",
     copyright: "© 2025 Vertice Sistemas. All rights reserved.",
@@ -238,31 +205,6 @@ export const pt: Translations = {
     closeMenu: "Fechar menu",
     switchToLightMode: "Mudar para modo claro",
     switchToDarkMode: "Mudar para modo escuro",
-  },
-  trustedEngineering: {
-    title: "Engenharia de Confiança",
-    items: [
-      {
-        title: "Engenheiros de Software Seniores",
-        description:
-          "Profissionais experientes com forte domínio de arquitetura full-stack.",
-      },
-      {
-        title: "Arquitetura Cloud Native",
-        description:
-          "Soluções preparadas para escalar com padrões modernos de cloud e infraestrutura resiliente.",
-      },
-      {
-        title: "Tecnologias Modernas",
-        description:
-          "Escolhas tecnológicas pragmáticas com ferramentas comprovadas como AWS, Kotlin e React.",
-      },
-      {
-        title: "Suporte de Longo Prazo",
-        description:
-          "Evolução contínua e manutenção para o software crítico do seu negócio.",
-      },
-    ],
   },
   hero: {
     titleStart: "Criamos software fiável para empresas que querem",
@@ -346,9 +288,6 @@ export const pt: Translations = {
       },
     ],
   },
-  technologies: {
-    title: "A Nossa Stack Tecnológica",
-  },
   process: {
     title: "Como Trabalhamos",
     subtitle: "Uma abordagem estruturada para transformar ideias em software de alto desempenho.",
@@ -387,7 +326,8 @@ export const pt: Translations = {
     servicesTitle: "Serviços",
     aboutTitle: "Sobre",
     contactTitle: "Contacto",
-    email: "hello@verticesistemas.pt",
+    email: "arnaldotecadm@hotmail.com",
+    phone: "+351 91 039 90 47",
     linkedin: "LinkedIn",
     github: "GitHub",
     copyright: "© 2025 Vertice Sistemas. Todos os direitos reservados.",

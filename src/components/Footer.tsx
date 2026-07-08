@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useLanguage } from "../i18n/useLanguage";
 
@@ -33,14 +33,18 @@ function Footer() {
             <p className="max-w-xs text-sm leading-7 text-muted-foreground">{t.footer.description}</p>
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/arnaldocicero"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t.footer.linkedin}
                 className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               >
                 <LinkedInIcon />
               </a>
               <a
-                href="#"
+                href="https://github.com/arnaldotecadm"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t.footer.github}
                 className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               >
@@ -101,6 +105,15 @@ function Footer() {
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   {t.footer.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${t.footer.phone.replace(/\s+/g, "")}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  {t.footer.phone}
                 </a>
               </li>
             </ul>
