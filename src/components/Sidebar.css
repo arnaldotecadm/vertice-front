@@ -1,0 +1,27 @@
+#sidebar {
+  flex: 0 0 220px;
+  width: 220px;
+  border-right: 1px solid var(--border);
+  text-align: left;
+  padding: 32px 20px;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+  }
+
+  .sidebar-placeholder {
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    flex: 0 0 auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+  }
+}
