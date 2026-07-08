@@ -1,38 +1,43 @@
+import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../i18n/useLanguage";
 
 const TECHNOLOGIES = [
   "Java",
-  "Spring Boot",
   "Kotlin",
+  "Spring Boot",
   "React",
   "TypeScript",
+  "Node.js",
   "AWS",
   "Docker",
   "Kubernetes",
   "PostgreSQL",
   "MongoDB",
   "Kafka",
+  "GitHub Actions",
   "Terraform",
 ];
 
-// Row of technology badge chips representing the stack Vértice works with.
 function Technologies() {
   const { t } = useLanguage();
 
   return (
-    <section className="border-y border-slate-200 bg-white py-16 dark:border-slate-800 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-        <h3 className="mb-8 text-sm font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
-          {t.technologies.title}
-        </h3>
-        <div className="flex flex-wrap justify-center gap-3">
+    <section className="border-y border-border bg-secondary/40 py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            {t.technologies.title}
+          </h2>
+        </div>
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
           {TECHNOLOGIES.map((tech) => (
-            <span
+            <Badge
               key={tech}
-              className="rounded-full border border-brand-primary/20 bg-brand-primary/5 px-4 py-2 text-sm font-medium text-brand-primary transition-colors hover:bg-brand-primary/10 dark:border-brand-accent/30 dark:bg-brand-accent/10 dark:text-brand-accent"
+              variant="outline"
+              className="h-auto rounded-full border-border bg-background px-4 py-2 text-sm font-medium text-foreground shadow-sm transition-colors hover:border-primary hover:bg-accent"
             >
               {tech}
-            </span>
+            </Badge>
           ))}
         </div>
       </div>

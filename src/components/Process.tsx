@@ -1,34 +1,29 @@
 import { useLanguage } from "../i18n/useLanguage";
 
-// Four-step horizontal timeline describing the engagement process, with a
-// connecting line on desktop that visually links each numbered milestone.
 function Process() {
   const { t } = useLanguage();
 
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="mb-16 text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
-          {t.process.title}
-        </h2>
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            {t.process.title}
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">{t.process.subtitle}</p>
+        </div>
 
         <div className="relative grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="absolute top-8 right-0 left-0 hidden h-px bg-slate-200 lg:block dark:bg-slate-800" />
+          <div className="absolute top-8 right-0 left-0 hidden h-px bg-border lg:block" />
           {t.process.steps.map((step, index) => (
-            <div
-              key={step.number}
-              className="animate-fade-in-up relative space-y-4"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-4 border-brand-primary bg-white text-lg font-bold text-brand-primary shadow-sm dark:bg-slate-950 dark:text-brand-accent dark:border-brand-accent">
-                {step.number}
+            <div key={step.title} className="relative rounded-3xl bg-background lg:bg-transparent">
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-lg font-semibold text-primary shadow-sm lg:mx-auto">
+                {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                {step.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                {step.description}
-              </p>
+              <div className="mt-6 space-y-3 lg:text-center">
+                <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                <p className="text-sm leading-7 text-muted-foreground">{step.description}</p>
+              </div>
             </div>
           ))}
         </div>

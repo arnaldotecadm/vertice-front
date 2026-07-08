@@ -4,7 +4,6 @@ export interface Translations {
   nav: {
     home: string;
     services: string;
-    solutions: string;
     about: string;
     contact: string;
     cta: string;
@@ -12,6 +11,10 @@ export interface Translations {
     closeMenu: string;
     switchToLightMode: string;
     switchToDarkMode: string;
+  };
+  trustedEngineering: {
+    title: string;
+    items: { title: string; description: string }[];
   };
   hero: {
     titleStart: string;
@@ -25,36 +28,20 @@ export interface Translations {
   services: {
     eyebrow: string;
     title: string;
+    subtitle: string;
     items: { title: string; description: string }[];
   };
   whyChooseUs: {
     title: string;
-    subtitle: string;
     items: { title: string; description: string }[];
   };
   technologies: {
     title: string;
   };
-  portfolio: {
-    eyebrow: string;
-    title: string;
-    subtitle: string;
-    prev: string;
-    next: string;
-    goTo: string;
-    items: { title: string; description: string; tags: string[] }[];
-  };
   process: {
     title: string;
-    steps: { number: string; title: string; description: string }[];
-  };
-  industries: {
-    title: string;
-    items: string[];
-  };
-  testimonials: {
-    title: string;
-    items: { quote: string; name: string; role: string }[];
+    subtitle: string;
+    steps: { title: string; description: string }[];
   };
   cta: {
     title: string;
@@ -63,9 +50,12 @@ export interface Translations {
   };
   footer: {
     description: string;
-    navigationTitle: string;
+    servicesTitle: string;
+    aboutTitle: string;
     contactTitle: string;
+    email: string;
     linkedin: string;
+    github: string;
     copyright: string;
   };
 }
@@ -74,7 +64,6 @@ export const en: Translations = {
   nav: {
     home: "Home",
     services: "Services",
-    solutions: "Solutions",
     about: "About",
     contact: "Contact",
     cta: "Schedule a Consultation",
@@ -83,190 +72,158 @@ export const en: Translations = {
     switchToLightMode: "Switch to light mode",
     switchToDarkMode: "Switch to dark mode",
   },
-  hero: {
-    titleStart: "Building software that",
-    titleHighlight: "moves",
-    titleEnd: "your business forward.",
-    subtitle:
-      "We design and develop scalable web platforms, backend systems, cloud-native applications, APIs, and digital solutions that help businesses innovate with confidence.",
-    ctaPrimary: "Schedule a Consultation",
-    ctaSecondary: "View Our Services",
-    imageAlt:
-      "Abstract illustration of connected cloud infrastructure and software components",
-  },
-  services: {
-    eyebrow: "Excellence in Engineering",
-    title: "Comprehensive Software Services",
+  trustedEngineering: {
+    title: "Trusted Engineering",
     items: [
       {
-        title: "Custom Software Development",
+        title: "Senior Software Engineers",
         description:
-          "Tailored solutions built from the ground up to solve your unique business challenges.",
+          "Battle-tested professionals with deep expertise in full-stack architecture.",
       },
       {
-        title: "Web Applications",
+        title: "Cloud Native Architecture",
         description:
-          "Responsive, high-performance web experiences built with modern frameworks like React.",
-      },
-      {
-        title: "Backend & API Development",
-        description:
-          "Robust, secure, and scalable server-side architectures that power your entire ecosystem.",
-      },
-      {
-        title: "Cloud Solutions (AWS)",
-        description:
-          "Expert cloud infrastructure setup, migration, and management on Amazon Web Services.",
-      },
-      {
-        title: "System Integration",
-        description:
-          "Seamlessly connecting your disparate software tools into a unified, efficient workflow.",
-      },
-      {
-        title: "Legacy System Modernization",
-        description:
-          "Transforming aging systems into modern, maintainable, and future-proof digital assets.",
-      },
-      {
-        title: "DevOps & CI/CD",
-        description:
-          "Automating your deployment pipeline for faster releases and higher software quality.",
-      },
-      {
-        title: "Technical Consulting",
-        description:
-          "Strategic advice on technology stacks, architecture, and engineering best practices.",
-      },
-    ],
-  },
-  whyChooseUs: {
-    title: "The Vértice Advantage",
-    subtitle: "Why businesses trust us with their most critical systems.",
-    items: [
-      {
-        title: "Scalable Architectures",
-        description:
-          "We build systems that grow with you, handling millions of requests with zero downtime.",
+          "Built for scale using modern cloud-native patterns and resilient infrastructure.",
       },
       {
         title: "Modern Technologies",
         description:
-          "Leveraging the latest stable tech stacks to ensure performance and maintainability.",
+          "Practical technology choices with proven tools like AWS, Kotlin, and React.",
       },
       {
-        title: "Secure by Design",
+        title: "Long-Term Support",
         description:
-          "Security is not an afterthought — it's integrated into every line of code we write.",
+          "Continuous evolution and maintenance for software your business depends on.",
+      },
+    ],
+  },
+  hero: {
+    titleStart: "Building Reliable Software for Businesses That Want to",
+    titleHighlight: "Scale",
+    titleEnd: "",
+    subtitle:
+      "Vertice Sistemas develops cloud-native applications, modern backend platforms, and scalable web solutions that help companies move faster with confidence.",
+    ctaPrimary: "Schedule a Consultation",
+    ctaSecondary: "Our Services",
+    imageAlt:
+      "Abstract illustration representing reliable cloud engineering and scalable software systems",
+  },
+  services: {
+    eyebrow: "Capabilities",
+    title: "Our Specialized Services",
+    subtitle:
+      "Tailored engineering solutions designed to solve complex business problems through code and architecture.",
+    items: [
+      {
+        title: "Custom Software Development",
+        description:
+          "End-to-end development of bespoke software systems tailored to your workflows and goals.",
+      },
+      {
+        title: "Cloud Solutions (AWS)",
+        description:
+          "Architecting and migrating systems to highly available, cost-effective AWS environments.",
+      },
+      {
+        title: "Backend Engineering",
+        description:
+          "Robust backend platforms built for performance, reliability, and high-concurrency workloads.",
+      },
+      {
+        title: "Web Application Development",
+        description:
+          "Responsive web interfaces built with modern frontend architecture and premium user experience.",
+      },
+      {
+        title: "API Design & Integration",
+        description:
+          "Secure, well-structured APIs that connect internal systems, partners, and customer-facing products.",
+      },
+      {
+        title: "System Modernization",
+        description:
+          "Refactoring legacy systems into maintainable, scalable platforms ready for future growth.",
+      },
+      {
+        title: "DevOps & CI/CD",
+        description:
+          "Automated delivery pipelines for faster releases, safer deployments, and better visibility.",
+      },
+      {
+        title: "Technical Consulting",
+        description:
+          "Strategic guidance on architecture, delivery, hiring, and technology decisions.",
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: "Why Vertice Sistemas",
+    items: [
+      {
+        title: "Engineering Excellence",
+        description:
+          "We build software that remains maintainable and scalable as your business grows.",
+      },
+      {
+        title: "Cloud-First",
+        description: "Designed for AWS and modern cloud platforms.",
+      },
+      {
+        title: "Business Focused",
+        description: "We solve business problems, not just technical ones.",
       },
       {
         title: "Long-Term Partnership",
         description:
-          "We are your technical allies, dedicated to your long-term success and growth.",
+          "We become a trusted technology partner rather than a temporary vendor.",
       },
     ],
   },
   technologies: {
-    title: "Technologies We Use",
-  },
-  portfolio: {
-    eyebrow: "Real-World Impact",
-    title: "Products We've Built",
-    subtitle:
-      "A look at real platforms our team has designed and shipped — not just concepts.",
-    prev: "Previous example",
-    next: "Next example",
-    goTo: "Go to example",
-    items: [
-      {
-        title: "One ERP, Every Department",
-        description:
-          "A single ERP platform that manages finance, inventory, HR, sales, and operations in one place — replacing disconnected spreadsheets and tools with one source of truth.",
-        tags: ["React", "Spring Boot", "PostgreSQL", "AWS"],
-      },
-      {
-        title: "We Turn Any Spreadsheet Into an App",
-        description:
-          "We transform the spreadsheets your team already relies on into fully-fledged, multi-user web applications — keeping familiar workflows while adding automation, validation, and real-time collaboration.",
-        tags: ["React", "TypeScript", "PostgreSQL", "Docker"],
-      },
-      {
-        title: "Heal — Track Your Fitness Journey",
-        description:
-          "A health and fitness tracking app that helps you log workouts, monitor progress, and stay motivated on your wellness journey.",
-        tags: ["React", "TypeScript", "AWS", "Amplify"],
-      },
-    ],
+    title: "Our Technology Stack",
   },
   process: {
-    title: "Our Process",
+    title: "How We Work",
+    subtitle: "A structured approach to turning ideas into high-performance software.",
     steps: [
       {
-        number: "01",
         title: "Discovery",
         description:
-          "Deep dive into your business needs, goals, and technical constraints.",
+          "In-depth analysis of your business requirements, constraints, and success metrics.",
       },
       {
-        number: "02",
-        title: "Design",
+        title: "Architecture",
         description:
-          "Architecting the solution and designing intuitive user interfaces.",
+          "Designing robust, scalable technical blueprints tailored for high-availability environments.",
       },
       {
-        number: "03",
         title: "Development",
         description:
-          "Agile development cycles with continuous feedback and full transparency.",
+          "Clean, tested code delivery using agile methodologies and continuous integration.",
       },
       {
-        number: "04",
-        title: "Delivery & Support",
+        title: "Continuous Improvement",
         description:
-          "Smooth deployment and ongoing support to keep your systems running at peak performance.",
-      },
-    ],
-  },
-  industries: {
-    title: "Industries We Serve",
-    items: ["Logistics", "Healthcare", "Finance", "Retail", "Manufacturing", "SaaS"],
-  },
-  testimonials: {
-    title: "Trusted by Growing Businesses",
-    items: [
-      {
-        quote:
-          "Vértice Sistemas completely transformed our backend infrastructure. Their technical depth and commitment to quality are unmatched.",
-        name: "Sara Almeida",
-        role: "CTO, LogiTrack Global",
-      },
-      {
-        quote:
-          "Professionalism at its finest. They didn't just build an app — they built a scalable product that helped us raise our Series A.",
-        name: "Miguel Ferreira",
-        role: "Founder, HealthStream",
-      },
-      {
-        quote:
-          "The team at Vértice has been our go-to partner for AWS migrations and cloud strategy. Truly world-class engineers.",
-        name: "Elena Rodrigues",
-        role: "VP Engineering, FinCore",
+          "Long-term monitoring, optimization, and scaling as your business grows.",
       },
     ],
   },
   cta: {
-    title: "Let's build your next software solution together.",
+    title: "Let's Build Your Next Software Project",
     subtitle:
-      "Ready to elevate your business with elite engineering? Our consultants are ready to discuss your project requirements.",
-    button: "Schedule a Consultation",
+      "Ready to scale? Connect with our senior engineering team to discuss your project requirements and technical challenges.",
+    button: "Get in Touch",
   },
   footer: {
     description:
-      "Software engineering consultancy building high-quality custom solutions for businesses across Portugal and beyond.",
-    navigationTitle: "Navigation",
+      "A senior software engineering consultancy specializing in building reliable, scalable, and secure cloud platforms for modern businesses.",
+    servicesTitle: "Services",
+    aboutTitle: "About",
     contactTitle: "Contact",
+    email: "hello@verticesistemas.pt",
     linkedin: "LinkedIn",
-    copyright: "All rights reserved.",
+    github: "GitHub",
+    copyright: "© 2025 Vertice Sistemas. All rights reserved.",
   },
 };
 
@@ -274,199 +231,166 @@ export const pt: Translations = {
   nav: {
     home: "Início",
     services: "Serviços",
-    solutions: "Soluções",
     about: "Sobre",
     contact: "Contacto",
-    cta: "Marcar Consulta",
+    cta: "Agendar Consulta",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     switchToLightMode: "Mudar para modo claro",
     switchToDarkMode: "Mudar para modo escuro",
   },
-  hero: {
-    titleStart: "Construímos software que",
-    titleHighlight: "impulsiona",
-    titleEnd: "o seu negócio.",
-    subtitle:
-      "Desenhamos e desenvolvemos plataformas web escaláveis, sistemas backend, aplicações cloud-native, APIs e soluções digitais que ajudam as empresas a inovar com confiança.",
-    ctaPrimary: "Marcar Consulta",
-    ctaSecondary: "Ver os Nossos Serviços",
-    imageAlt:
-      "Ilustração abstrata de infraestrutura cloud e componentes de software interligados",
-  },
-  services: {
-    eyebrow: "Excelência em Engenharia",
-    title: "Serviços de Software Completos",
+  trustedEngineering: {
+    title: "Engenharia de Confiança",
     items: [
       {
-        title: "Desenvolvimento de Software à Medida",
+        title: "Engenheiros de Software Seniores",
         description:
-          "Soluções personalizadas, construídas de raiz, para resolver os desafios únicos do seu negócio.",
+          "Profissionais experientes com forte domínio de arquitetura full-stack.",
       },
       {
-        title: "Aplicações Web",
+        title: "Arquitetura Cloud Native",
         description:
-          "Experiências web responsivas e de alto desempenho, construídas com frameworks modernos como o React.",
-      },
-      {
-        title: "Desenvolvimento Backend & API",
-        description:
-          "Arquiteturas de servidor robustas, seguras e escaláveis que sustentam todo o seu ecossistema.",
-      },
-      {
-        title: "Soluções Cloud (AWS)",
-        description:
-          "Configuração, migração e gestão especializada de infraestrutura cloud na Amazon Web Services.",
-      },
-      {
-        title: "Integração de Sistemas",
-        description:
-          "Ligação transparente das suas ferramentas de software díspares num fluxo de trabalho unificado e eficiente.",
-      },
-      {
-        title: "Modernização de Sistemas Legados",
-        description:
-          "Transformação de sistemas antigos em ativos digitais modernos, sustentáveis e preparados para o futuro.",
-      },
-      {
-        title: "DevOps & CI/CD",
-        description:
-          "Automatização do pipeline de implementação para lançamentos mais rápidos e maior qualidade de software.",
-      },
-      {
-        title: "Consultoria Técnica",
-        description:
-          "Aconselhamento estratégico sobre stacks tecnológicas, arquitetura e boas práticas de engenharia.",
-      },
-    ],
-  },
-  whyChooseUs: {
-    title: "A Vantagem Vértice",
-    subtitle: "Porque as empresas confiam em nós para os seus sistemas mais críticos.",
-    items: [
-      {
-        title: "Arquiteturas Escaláveis",
-        description:
-          "Construímos sistemas que crescem consigo, suportando milhões de pedidos sem tempo de inatividade.",
+          "Soluções preparadas para escalar com padrões modernos de cloud e infraestrutura resiliente.",
       },
       {
         title: "Tecnologias Modernas",
         description:
-          "Utilizamos as stacks tecnológicas estáveis mais recentes para garantir desempenho e manutenibilidade.",
+          "Escolhas tecnológicas pragmáticas com ferramentas comprovadas como AWS, Kotlin e React.",
       },
       {
-        title: "Segurança desde a Conceção",
+        title: "Suporte de Longo Prazo",
         description:
-          "A segurança não é um acessório — está integrada em cada linha de código que escrevemos.",
+          "Evolução contínua e manutenção para o software crítico do seu negócio.",
+      },
+    ],
+  },
+  hero: {
+    titleStart: "Criamos software fiável para empresas que querem",
+    titleHighlight: "escalar",
+    titleEnd: "",
+    subtitle:
+      "A Vertice Sistemas desenvolve aplicações cloud-native, plataformas backend modernas e soluções web escaláveis que ajudam as empresas a avançar mais rápido com confiança.",
+    ctaPrimary: "Agendar Consulta",
+    ctaSecondary: "Os Nossos Serviços",
+    imageAlt:
+      "Ilustração abstrata que representa engenharia cloud fiável e sistemas de software escaláveis",
+  },
+  services: {
+    eyebrow: "Capacidades",
+    title: "Os Nossos Serviços Especializados",
+    subtitle:
+      "Soluções de engenharia à medida, pensadas para resolver problemas de negócio complexos através de código e arquitetura.",
+    items: [
+      {
+        title: "Desenvolvimento de Software à Medida",
+        description:
+          "Desenvolvimento completo de sistemas de software feitos à medida dos seus processos e objetivos.",
+      },
+      {
+        title: "Soluções Cloud (AWS)",
+        description:
+          "Arquitetura e migração de sistemas para ambientes AWS altamente disponíveis e eficientes em custos.",
+      },
+      {
+        title: "Engenharia Backend",
+        description:
+          "Plataformas backend robustas, preparadas para desempenho, fiabilidade e cargas elevadas.",
+      },
+      {
+        title: "Desenvolvimento de Aplicações Web",
+        description:
+          "Interfaces web responsivas construídas com arquitetura frontend moderna e foco em experiência premium.",
+      },
+      {
+        title: "Desenho e Integração de APIs",
+        description:
+          "APIs seguras e bem estruturadas para ligar sistemas internos, parceiros e produtos digitais.",
+      },
+      {
+        title: "Modernização de Sistemas",
+        description:
+          "Refatoração de sistemas legados para plataformas sustentáveis, escaláveis e prontas para crescer.",
+      },
+      {
+        title: "DevOps & CI/CD",
+        description:
+          "Pipelines automatizados para lançamentos mais rápidos, implementações mais seguras e maior visibilidade.",
+      },
+      {
+        title: "Consultoria Técnica",
+        description:
+          "Apoio estratégico em arquitetura, delivery, contratação e decisões tecnológicas.",
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: "Porque escolher a Vertice Sistemas",
+    items: [
+      {
+        title: "Excelência em Engenharia",
+        description:
+          "Construímos software que se mantém sustentável e escalável à medida que o seu negócio cresce.",
+      },
+      {
+        title: "Cloud-First",
+        description: "Projetado para AWS e plataformas cloud modernas.",
+      },
+      {
+        title: "Foco no Negócio",
+        description: "Resolvemos problemas de negócio, não apenas desafios técnicos.",
       },
       {
         title: "Parceria de Longo Prazo",
         description:
-          "Somos os seus aliados técnicos, dedicados ao seu sucesso e crescimento a longo prazo.",
+          "Tornamo-nos um parceiro tecnológico de confiança, e não um fornecedor temporário.",
       },
     ],
   },
   technologies: {
-    title: "Tecnologias que Utilizamos",
-  },
-  portfolio: {
-    eyebrow: "Impacto Real",
-    title: "Produtos que Construímos",
-    subtitle:
-      "Um vislumbre de plataformas reais que a nossa equipa desenhou e entregou — não apenas conceitos.",
-    prev: "Exemplo anterior",
-    next: "Próximo exemplo",
-    goTo: "Ir para o exemplo",
-    items: [
-      {
-        title: "Um ERP, Todos os Departamentos",
-        description:
-          "Uma única plataforma ERP que gere finanças, inventário, recursos humanos, vendas e operações num só lugar — substituindo folhas de cálculo e ferramentas desligadas entre si por uma única fonte de verdade.",
-        tags: ["React", "Spring Boot", "PostgreSQL", "AWS"],
-      },
-      {
-        title: "Transformamos Qualquer Folha de Cálculo numa Aplicação",
-        description:
-          "Transformamos as folhas de cálculo que a sua equipa já utiliza em aplicações web completas e multiutilizador — mantendo os fluxos de trabalho familiares e acrescentando automação, validação e colaboração em tempo real.",
-        tags: ["React", "TypeScript", "PostgreSQL", "Docker"],
-      },
-      {
-        title: "Heal — Acompanhe o Seu Percurso Fitness",
-        description:
-          "Uma aplicação de saúde e fitness que o ajuda a registar treinos, acompanhar o progresso e manter-se motivado no seu percurso de bem-estar.",
-        tags: ["React", "TypeScript", "AWS", "Amplify"],
-      },
-    ],
+    title: "A Nossa Stack Tecnológica",
   },
   process: {
-    title: "O Nosso Processo",
+    title: "Como Trabalhamos",
+    subtitle: "Uma abordagem estruturada para transformar ideias em software de alto desempenho.",
     steps: [
       {
-        number: "01",
         title: "Descoberta",
         description:
-          "Análise aprofundada das necessidades, objetivos e restrições técnicas do seu negócio.",
+          "Análise aprofundada dos requisitos do seu negócio, restrições e métricas de sucesso.",
       },
       {
-        number: "02",
-        title: "Design",
+        title: "Arquitetura",
         description:
-          "Arquitetura da solução e conceção de interfaces de utilizador intuitivas.",
+          "Desenho de bases técnicas robustas e escaláveis para ambientes de elevada disponibilidade.",
       },
       {
-        number: "03",
         title: "Desenvolvimento",
         description:
-          "Ciclos de desenvolvimento ágil com feedback contínuo e total transparência.",
+          "Entrega de código limpo e testado com metodologias ágeis e integração contínua.",
       },
       {
-        number: "04",
-        title: "Entrega & Suporte",
+        title: "Melhoria Contínua",
         description:
-          "Implementação sem sobressaltos e suporte contínuo para manter os seus sistemas no seu melhor desempenho.",
-      },
-    ],
-  },
-  industries: {
-    title: "Indústrias que Servimos",
-    items: ["Logística", "Saúde", "Finanças", "Retalho", "Indústria", "SaaS"],
-  },
-  testimonials: {
-    title: "A Confiança de Empresas em Crescimento",
-    items: [
-      {
-        quote:
-          "A Vértice Sistemas transformou completamente a nossa infraestrutura de backend. A profundidade técnica e o compromisso com a qualidade são incomparáveis.",
-        name: "Sara Almeida",
-        role: "CTO, LogiTrack Global",
-      },
-      {
-        quote:
-          "Profissionalismo ao mais alto nível. Não construíram apenas uma aplicação — construíram um produto escalável que nos ajudou a fechar a nossa Série A.",
-        name: "Miguel Ferreira",
-        role: "Fundador, HealthStream",
-      },
-      {
-        quote:
-          "A equipa da Vértice tem sido o nosso parceiro de eleição para migrações AWS e estratégia cloud. Engenheiros verdadeiramente de classe mundial.",
-        name: "Elena Rodrigues",
-        role: "VP de Engenharia, FinCore",
+          "Monitorização, otimização e escalabilidade contínuas à medida que o seu negócio cresce.",
       },
     ],
   },
   cta: {
-    title: "Vamos construir juntos a sua próxima solução de software.",
+    title: "Vamos Construir o Seu Próximo Projeto de Software",
     subtitle:
-      "Pronto para elevar o seu negócio com engenharia de elite? Os nossos consultores estão prontos para discutir os requisitos do seu projeto.",
-    button: "Marcar Consulta",
+      "Pronto para escalar? Fale com a nossa equipa de engenharia sénior para discutir os requisitos e desafios técnicos do seu projeto.",
+    button: "Entrar em Contacto",
   },
   footer: {
     description:
-      "Consultoria de engenharia de software que constrói soluções à medida de alta qualidade para empresas em Portugal e além-fronteiras.",
-    navigationTitle: "Navegação",
+      "Uma consultora de engenharia de software sénior focada em criar plataformas cloud fiáveis, escaláveis e seguras para empresas modernas.",
+    servicesTitle: "Serviços",
+    aboutTitle: "Sobre",
     contactTitle: "Contacto",
+    email: "hello@verticesistemas.pt",
     linkedin: "LinkedIn",
-    copyright: "Todos os direitos reservados.",
+    github: "GitHub",
+    copyright: "© 2025 Vertice Sistemas. Todos os direitos reservados.",
   },
 };
 

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import logo from "../assets/logo.png";
 import { useLanguage } from "../i18n/useLanguage";
 import type { Locale } from "../i18n/translations";
 import { useTheme } from "../theme/useTheme";
 
-// Compact PT/EN toggle used in both the desktop bar and the mobile menu.
 function LanguageSwitcher({ className = "" }: { className?: string }) {
   const { language, setLanguage } = useLanguage();
 
@@ -15,21 +16,19 @@ function LanguageSwitcher({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={() => setLanguage(toggleTo)}
-      className={`inline-flex items-center gap-1 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-700 dark:text-slate-300 dark:hover:border-brand-accent dark:hover:text-brand-accent ${className}`}
+      className={cn(
+        "inline-flex items-center gap-1 rounded-xl border border-border bg-background px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground",
+        className
+      )}
       aria-label={`Switch language to ${toggleTo === "en" ? "English" : "Português"}`}
     >
-      <span className={language === "en" ? "text-brand-primary dark:text-brand-accent" : ""}>
-        EN
-      </span>
+      <span className={language === "en" ? "text-primary" : ""}>EN</span>
       <span aria-hidden="true">/</span>
-      <span className={language === "pt" ? "text-brand-primary dark:text-brand-accent" : ""}>
-        PT
-      </span>
+      <span className={language === "pt" ? "text-primary" : ""}>PT</span>
     </button>
   );
 }
 
-// Compact light/dark toggle used in both the desktop bar and the mobile menu.
 function ThemeToggle({ className = "" }: { className?: string }) {
   const { theme, toggleTheme } = useTheme();
   const { t } = useLanguage();
@@ -39,7 +38,10 @@ function ThemeToggle({ className = "" }: { className?: string }) {
       type="button"
       onClick={toggleTheme}
       aria-label={theme === "dark" ? t.nav.switchToLightMode : t.nav.switchToDarkMode}
-      className={`inline-flex items-center justify-center rounded-lg border border-slate-200 p-2 text-slate-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-700 dark:text-slate-300 dark:hover:border-brand-accent dark:hover:text-brand-accent ${className}`}
+      className={cn(
+        "inline-flex items-center justify-center rounded-xl border border-border bg-background p-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground",
+        className
+      )}
     >
       {theme === "dark" ? (
         <Sun className="h-4 w-4" aria-hidden="true" />
@@ -50,9 +52,6 @@ function ThemeToggle({ className = "" }: { className?: string }) {
   );
 }
 
-// Sticky top navigation: brand mark, primary nav links, language/theme
-// switchers, and the main "Schedule a Consultation" CTA. Collapses into a
-// slide-down menu on mobile.
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
@@ -60,18 +59,17 @@ function Navbar() {
   const NAV_LINKS = [
     { label: t.nav.home, href: "#home" },
     { label: t.nav.services, href: "#services" },
-    { label: t.nav.solutions, href: "#solutions" },
     { label: t.nav.about, href: "#about" },
     { label: t.nav.contact, href: "#contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#home" className="flex items-center gap-2">
-          <img src={logo} alt="" className="h-8 w-8" />
-          <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-            Vértice Sistemas
+          <img src={logo} alt="" className="h-8 w-8 rounded-lg" />
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            Vertice Sistemas
           </span>
         </a>
 
@@ -80,7 +78,7 @@ function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-brand-primary dark:text-slate-300 dark:hover:text-brand-accent"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -92,7 +90,10 @@ function Navbar() {
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="rounded-lg bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition-all hover:bg-brand-secondary hover:shadow-md active:scale-95"
+            className={cn(
+              buttonVariants({ variant: "default", size: "lg" }),
+              "h-10 rounded-xl px-5 shadow-sm"
+            )}
           >
             {t.nav.cta}
           </a>
@@ -100,7 +101,7 @@ function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 md:hidden dark:text-slate-200"
+          className="inline-flex items-center justify-center rounded-xl border border-border bg-background p-2 text-foreground md:hidden"
           aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
@@ -110,13 +111,13 @@ function Navbar() {
       </nav>
 
       {isMenuOpen && (
-        <div className="border-t border-slate-200 bg-white px-6 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950">
+        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 dark:text-slate-300"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -128,7 +129,10 @@ function Navbar() {
             </div>
             <a
               href="#contact"
-              className="mt-2 rounded-lg bg-brand-primary px-5 py-2.5 text-center text-sm font-semibold text-white"
+              className={cn(
+                buttonVariants({ variant: "default", size: "lg" }),
+                "mt-2 h-10 rounded-xl px-5"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t.nav.cta}

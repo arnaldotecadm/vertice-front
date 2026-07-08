@@ -1,66 +1,71 @@
 import {
-  Code2,
-  Laptop,
-  Webhook,
+  BriefcaseBusiness,
   Cloud,
-  Share2,
+  Code2,
+  Database,
+  MonitorSmartphone,
   RefreshCw,
+  Webhook,
   Workflow,
-  BrainCircuit,
   type LucideIcon,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "../i18n/useLanguage";
 
 const SERVICE_ICONS: LucideIcon[] = [
   Code2,
-  Laptop,
-  Webhook,
   Cloud,
-  Share2,
+  Database,
+  MonitorSmartphone,
+  Webhook,
   RefreshCw,
   Workflow,
-  BrainCircuit,
+  BriefcaseBusiness,
 ];
 
-// Elegant grid of service cards, each with an icon, title, and short
-// description. Cards lift slightly on hover to feel tactile and premium.
 function Services() {
   const { t } = useLanguage();
 
   return (
-    <section
-      id="services"
-      className="bg-slate-50 py-24 dark:bg-slate-900/40"
-    >
+    <section id="services" className="bg-secondary/60 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-widest text-brand-accent">
+        <div className="max-w-3xl">
+          <Badge
+            variant="secondary"
+            className="rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-[0.2em]"
+          >
             {t.services.eyebrow}
-          </span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+          </Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {t.services.title}
           </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
+            {t.services.subtitle}
+          </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.services.items.map((service, index) => {
             const Icon = SERVICE_ICONS[index];
+
             return (
-              <div
+              <Card
                 key={service.title}
-                className="animate-fade-in-up rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
-                style={{ animationDelay: `${index * 75}ms` }}
+                className="rounded-3xl border border-border/70 bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-accent">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {service.description}
-                </p>
-              </div>
+                <CardHeader className="space-y-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm leading-7">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
@@ -70,4 +75,3 @@ function Services() {
 }
 
 export default Services;
-
