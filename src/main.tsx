@@ -1,20 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { Amplify } from 'aws-amplify'
-import outputs from '../amplify_outputs.json'
-import { AuthProvider } from './auth/AuthContext'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+import LanguageProvider from "./i18n/LanguageContext.tsx";
 
-Amplify.configure(outputs)
-
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </BrowserRouter>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </StrictMode>,
-)
+);
