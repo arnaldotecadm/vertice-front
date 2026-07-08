@@ -38,8 +38,8 @@ function Navbar() {
   const NAV_LINKS = [
     { label: t.nav.home, href: "#home" },
     { label: t.nav.services, href: "#services" },
-    { label: t.nav.solutions, href: "#solutions" },
     { label: t.nav.about, href: "#about" },
+    { label: t.nav.solutions, href: "#solutions" },
     { label: t.nav.contact, href: "#contact" },
   ];
 

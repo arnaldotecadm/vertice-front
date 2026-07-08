@@ -2,24 +2,14 @@ import { useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
-  Truck,
+  Building2,
+  FileSpreadsheet,
   HeartPulse,
-  Wallet,
-  ShoppingCart,
-  Factory,
-  BarChart3,
   type LucideIcon,
 } from "lucide-react";
 import { useLanguage } from "../i18n/useLanguage";
 
-const ITEM_ICONS: LucideIcon[] = [
-  Truck,
-  HeartPulse,
-  Wallet,
-  ShoppingCart,
-  Factory,
-  BarChart3,
-];
+const ITEM_ICONS: LucideIcon[] = [Building2, FileSpreadsheet, HeartPulse];
 
 // Distinct gradient treatment per card so the carousel feels varied rather
 // than repetitive, while staying within the brand's blue palette.
@@ -27,9 +17,6 @@ const ITEM_GRADIENTS = [
   "from-blue-500 to-cyan-400",
   "from-indigo-500 to-blue-400",
   "from-sky-500 to-blue-600",
-  "from-blue-600 to-indigo-400",
-  "from-cyan-500 to-blue-500",
-  "from-blue-500 to-sky-400",
 ];
 
 // Horizontally-scrolling showcase of example applications Vértice could

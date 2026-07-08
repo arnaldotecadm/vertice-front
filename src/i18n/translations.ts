@@ -167,48 +167,30 @@ export const en: Translations = {
   },
   portfolio: {
     eyebrow: "Real-World Impact",
-    title: "Applications We Can Build For You",
+    title: "Products We've Built",
     subtitle:
-      "A look at the kind of custom platforms our team designs and ships for clients across industries.",
+      "A look at real platforms our team has designed and shipped — not just concepts.",
     prev: "Previous example",
     next: "Next example",
     goTo: "Go to example",
     items: [
       {
-        title: "Logistics Fleet Management Platform",
+        title: "One ERP, Every Department",
         description:
-          "Real-time vehicle tracking, route optimization, and delivery analytics for logistics operators.",
-        tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-      },
-      {
-        title: "Healthcare Patient Portal",
-        description:
-          "Secure patient scheduling, telemedicine, and records management for clinics and hospital networks.",
-        tags: ["React", "Spring Boot", "PostgreSQL", "HL7"],
-      },
-      {
-        title: "FinTech Payments Dashboard",
-        description:
-          "Real-time transaction monitoring, fraud detection, and reporting for financial institutions.",
-        tags: ["Kotlin", "Kafka", "React", "AWS"],
-      },
-      {
-        title: "E-commerce Retail Platform",
-        description:
-          "Scalable storefront with inventory sync, personalized recommendations, and headless checkout.",
-        tags: ["React", "TypeScript", "MongoDB", "Docker"],
-      },
-      {
-        title: "Manufacturing IoT Monitoring",
-        description:
-          "Real-time equipment monitoring and predictive maintenance dashboards for factory floors.",
-        tags: ["React", "Kafka", "Kubernetes", "Terraform"],
-      },
-      {
-        title: "SaaS Analytics Platform",
-        description:
-          "Multi-tenant analytics and reporting suite with customizable dashboards for B2B SaaS products.",
+          "A single ERP platform that manages finance, inventory, HR, sales, and operations in one place — replacing disconnected spreadsheets and tools with one source of truth.",
         tags: ["React", "Spring Boot", "PostgreSQL", "AWS"],
+      },
+      {
+        title: "We Turn Any Spreadsheet Into an App",
+        description:
+          "We transform the spreadsheets your team already relies on into fully-fledged, multi-user web applications — keeping familiar workflows while adding automation, validation, and real-time collaboration.",
+        tags: ["React", "TypeScript", "PostgreSQL", "Docker"],
+      },
+      {
+        title: "Heal — Track Your Fitness Journey",
+        description:
+          "A health and fitness tracking app that helps you log workouts, monitor progress, and stay motivated on your wellness journey.",
+        tags: ["React", "TypeScript", "AWS", "Amplify"],
       },
     ],
   },
@@ -383,48 +365,30 @@ export const pt: Translations = {
   },
   portfolio: {
     eyebrow: "Impacto Real",
-    title: "Aplicações que Podemos Construir para Si",
+    title: "Produtos que Construímos",
     subtitle:
-      "Um vislumbre do tipo de plataformas à medida que a nossa equipa desenha e entrega a clientes de diversas indústrias.",
+      "Um vislumbre de plataformas reais que a nossa equipa desenhou e entregou — não apenas conceitos.",
     prev: "Exemplo anterior",
     next: "Próximo exemplo",
     goTo: "Ir para o exemplo",
     items: [
       {
-        title: "Plataforma de Gestão de Frotas Logísticas",
+        title: "Um ERP, Todos os Departamentos",
         description:
-          "Rastreio de veículos em tempo real, otimização de rotas e análise de entregas para operadores logísticos.",
-        tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-      },
-      {
-        title: "Portal do Paciente na Saúde",
-        description:
-          "Agendamento seguro de pacientes, telemedicina e gestão de registos clínicos para clínicas e hospitais.",
-        tags: ["React", "Spring Boot", "PostgreSQL", "HL7"],
-      },
-      {
-        title: "Dashboard de Pagamentos FinTech",
-        description:
-          "Monitorização de transações em tempo real, deteção de fraude e relatórios para instituições financeiras.",
-        tags: ["Kotlin", "Kafka", "React", "AWS"],
-      },
-      {
-        title: "Plataforma de Retalho E-commerce",
-        description:
-          "Loja online escalável com sincronização de inventário, recomendações personalizadas e checkout headless.",
-        tags: ["React", "TypeScript", "MongoDB", "Docker"],
-      },
-      {
-        title: "Monitorização IoT Industrial",
-        description:
-          "Monitorização de equipamentos em tempo real e dashboards de manutenção preditiva para fábricas.",
-        tags: ["React", "Kafka", "Kubernetes", "Terraform"],
-      },
-      {
-        title: "Plataforma de Análise SaaS",
-        description:
-          "Suite de análise e relatórios multi-tenant com dashboards personalizáveis para produtos SaaS B2B.",
+          "Uma única plataforma ERP que gere finanças, inventário, recursos humanos, vendas e operações num só lugar — substituindo folhas de cálculo e ferramentas desligadas entre si por uma única fonte de verdade.",
         tags: ["React", "Spring Boot", "PostgreSQL", "AWS"],
+      },
+      {
+        title: "Transformamos Qualquer Folha de Cálculo numa Aplicação",
+        description:
+          "Transformamos as folhas de cálculo que a sua equipa já utiliza em aplicações web completas e multiutilizador — mantendo os fluxos de trabalho familiares e acrescentando automação, validação e colaboração em tempo real.",
+        tags: ["React", "TypeScript", "PostgreSQL", "Docker"],
+      },
+      {
+        title: "Heal — Acompanhe o Seu Percurso Fitness",
+        description:
+          "Uma aplicação de saúde e fitness que o ajuda a registar treinos, acompanhar o progresso e manter-se motivado no seu percurso de bem-estar.",
+        tags: ["React", "TypeScript", "AWS", "Amplify"],
       },
     ],
   },
