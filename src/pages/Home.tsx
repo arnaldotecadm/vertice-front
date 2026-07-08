@@ -8,7 +8,7 @@ import "../App.css";
 
 function Home() {
   const [count, setCount] = useState(0);
-  const { user, signOut } = useAuthenticator((context) => [context.user]);
+  const { user } = useAuthenticator((context) => [context.user]);
 
   return (
     <div id="layout">
@@ -41,9 +41,6 @@ function Home() {
             onClick={() => setCount((count) => count + 1)}
           >
             Count is {count}
-          </button>
-          <button type="button" className="counter" onClick={signOut}>
-            Sign out
           </button>
         </section>
 
