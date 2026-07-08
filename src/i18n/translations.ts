@@ -60,7 +60,7 @@ export const en: Translations = {
     services: "Services",
     about: "About",
     contact: "Contact",
-    cta: "Schedule a Consultation",
+    cta: "Talk to an Engineer",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     switchToLightMode: "Switch to light mode",
@@ -72,7 +72,7 @@ export const en: Translations = {
     titleEnd: "",
     subtitle:
       "Vertice Sistemas develops cloud-native applications, modern backend platforms, and scalable web solutions that help companies move faster with confidence.",
-    ctaPrimary: "Schedule a Consultation",
+    ctaPrimary: "Talk to an Engineer",
     ctaSecondary: "Our Services",
     imageAlt:
       "Abstract illustration representing reliable cloud engineering and scalable software systems",
@@ -200,7 +200,7 @@ export const pt: Translations = {
     services: "Serviços",
     about: "Sobre",
     contact: "Contacto",
-    cta: "Agendar Consulta",
+    cta: "Fale com um Engenheiro",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     switchToLightMode: "Mudar para modo claro",
@@ -212,7 +212,7 @@ export const pt: Translations = {
     titleEnd: "",
     subtitle:
       "A Vertice Sistemas desenvolve aplicações cloud-native, plataformas backend modernas e soluções web escaláveis que ajudam as empresas a avançar mais rápido com confiança.",
-    ctaPrimary: "Agendar Consulta",
+    ctaPrimary: "Fale com um Engenheiro",
     ctaSecondary: "Os Nossos Serviços",
     imageAlt:
       "Ilustração abstrata que representa engenharia cloud fiável e sistemas de software escaláveis",
