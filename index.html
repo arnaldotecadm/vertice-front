@@ -15,6 +15,22 @@
       rel="stylesheet"
     />
     <title>Vértice Sistemas | Custom Software Engineering</title>
+    <script>
+      // Applies the saved/preferred theme before first paint to avoid a
+      // flash of the wrong theme. Kept in sync with src/theme/ThemeContext.
+      (function () {
+        try {
+          var stored = localStorage.getItem("vertice-theme");
+          var isDark =
+            stored === "dark" ||
+            (stored !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", isDark);
+        } catch {
+          // Ignore (e.g. localStorage disabled) and fall back to light mode.
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

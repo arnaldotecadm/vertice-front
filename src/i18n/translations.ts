@@ -10,6 +10,8 @@ export interface Translations {
     cta: string;
     openMenu: string;
     closeMenu: string;
+    switchToLightMode: string;
+    switchToDarkMode: string;
   };
   hero: {
     titleStart: string;
@@ -78,6 +80,8 @@ export const en: Translations = {
     cta: "Schedule a Consultation",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    switchToLightMode: "Switch to light mode",
+    switchToDarkMode: "Switch to dark mode",
   },
   hero: {
     titleStart: "Building software that",
@@ -276,6 +280,8 @@ export const pt: Translations = {
     cta: "Marcar Consulta",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
+    switchToLightMode: "Mudar para modo claro",
+    switchToDarkMode: "Mudar para modo escuro",
   },
   hero: {
     titleStart: "Construímos software que",

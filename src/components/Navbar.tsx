@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useLanguage } from "../i18n/useLanguage";
 import type { Locale } from "../i18n/translations";
+import { useTheme } from "../theme/useTheme";
 
 // Compact PT/EN toggle used in both the desktop bar and the mobile menu.
 function LanguageSwitcher({ className = "" }: { className?: string }) {
@@ -28,9 +29,30 @@ function LanguageSwitcher({ className = "" }: { className?: string }) {
   );
 }
 
-// Sticky top navigation: brand mark, primary nav links, language switcher,
-// and the main "Schedule a Consultation" CTA. Collapses into a slide-down
-// menu on mobile.
+// Compact light/dark toggle used in both the desktop bar and the mobile menu.
+function ThemeToggle({ className = "" }: { className?: string }) {
+  const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
+
+  return (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? t.nav.switchToLightMode : t.nav.switchToDarkMode}
+      className={`inline-flex items-center justify-center rounded-lg border border-slate-200 p-2 text-slate-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-700 dark:text-slate-300 dark:hover:border-brand-accent dark:hover:text-brand-accent ${className}`}
+    >
+      {theme === "dark" ? (
+        <Sun className="h-4 w-4" aria-hidden="true" />
+      ) : (
+        <Moon className="h-4 w-4" aria-hidden="true" />
+      )}
+    </button>
+  );
+}
+
+// Sticky top navigation: brand mark, primary nav links, language/theme
+// switchers, and the main "Schedule a Consultation" CTA. Collapses into a
+// slide-down menu on mobile.
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
@@ -66,6 +88,7 @@ function Navbar() {
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
+          <ThemeToggle />
           <LanguageSwitcher />
           <a
             href="#contact"
@@ -99,7 +122,10 @@ function Navbar() {
                 {link.label}
               </a>
             ))}
-            <LanguageSwitcher className="self-start" />
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
             <a
               href="#contact"
               className="mt-2 rounded-lg bg-brand-primary px-5 py-2.5 text-center text-sm font-semibold text-white"
